@@ -151,4 +151,8 @@ Object.is(Nan, Nan);       // prediction: true
 [] == false;       // prediction: false
 // one-line note: The empty array is not equal to false, as they are of different types.
 
+[] == 0;       // prediction: false
+// one-line note: an empty array is not equal to 0, as they are of different types.
 
+[0] == false;       // prediction: false
+// one-line note: an array with a single element is not equal to false, as they are of different types.
