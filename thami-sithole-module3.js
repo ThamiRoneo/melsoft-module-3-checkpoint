@@ -156,3 +156,41 @@ Object.is(Nan, Nan);       // prediction: true
 
 [0] == false;       // prediction: false
 // one-line note: an array with a single element is not equal to false, as they are of different types.
+
+// Part B - Real World form validator
+
+const form = document.querySelector('form');
+const currentEmail = document.querySelector('#current-email');
+const confirmEmail = document.querySelector('#confirm-email');
+const newPassword = document.querySelector('#new-password');
+const confirmPassword = document.querySelector('#confirm-password');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (currentEmail.value !== confirmEmail.value) {
+    alert('Email addresses do not match');
+    return;
+  }
+
+  if (newPassword.value !== confirmPassword.value) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  if (newPassword.value === currentEmail.value) {
+    alert('New password cannot be the same as the current email');
+    return;
+  }
+
+  if(newPassword.value.length < 8) {
+    alert('Password must be at least 8 characters');
+    return;
+  }
+
+  alert('Form submitted successfully');
+});
+
+// I used the strict equality (===) to compare the values of the password fields.
+// Yes, my choice matters a lot specifically for the password comparison, because
+// it ensures that the values are compared as strings, not as numbers or other types.
