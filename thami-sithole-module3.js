@@ -409,3 +409,40 @@ console.log(Math.PI);   // 3.141592653589793
 // instead i could use splice() - it removes the specified element on an array and automatically shifts all the
 // the following elements to the left. for example: arr.splice(index, 1) - would remove element on index 1 and shift
 // all elements following the removed index to close the empty slot.
+
+
+/**************************************
+* Challenge 9 - Big Hunt              *
+**************************************/
+// Bugs:
+// 1. var item1Price = "199.99"; - is bug because itemPrice variable is assigned to type string instead on a number.
+// 2. var item2Price = "49.50"; - is bug because itemPrice variable is assigned to type string instead on a number.
+// 3. var quantity = "2"; - is bug because itemPrice variable is assigned to type string instead on a number.
+// 4. var isLoggedIn = "true"; - a boolean variable is assigned to a string type.
+// 5. var subtotal = item1Price + item2Price + item3Price * quantity; - no parentheses for itemPrice addition
+// 6. var discount = discountCode == "SAVE10" ? 0.1 : 0; - == equality is not a strict one and a discount is a discount.
+// 7. var canCheckout = isLoggedIn && customerAge > 18; - condition passes even when they wrong instead applying a proper
+// ternay chain it is a good fix
+// 
+// Corrected Version:
+// // === JUNIOR DEVELOPER'S CART SCRIPT (DO NOT TRUST ANY LINE) ===
+var item1Price = 199.99;
+var item2Price = 49.50;
+var item3Price = 125;
+var quantity = 2;
+var discountCode = "SAVE10";
+var isLoggedIn = false;
+var customerAge = 18;
+var subtotal = (item1Price + item2Price + item3Price) * quantity;
+console.log("Subtotal:", subtotal);
+var discount = discountCode === "SAVE10" ? 0.1 : 0;
+var discountAmount = subtotal * discount;
+var afterDiscount = subtotal - discountAmount;
+var vat = afterDiscount * 0.15;
+var total = afterDiscount + vat;
+var canCheckout = isLoggedIn && customerAge >= 18 ? true : false;
+console.log("Can checkout?", canCheckout);
+var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+var finalTotal = total - seniorDiscount;
+console.log("Total: R" + finalTotal.toFixed(2));
+// === END OF SCRIPT ===
