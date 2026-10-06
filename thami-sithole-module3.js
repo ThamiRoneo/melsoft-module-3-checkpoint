@@ -217,3 +217,8 @@ form.addEventListener('submit', (e) => {
 2 ** 3 ** 2   // prediction: 512
 // step 1: 3 ** 2 = 9
 // step 2: 2 ** 9 = 512
+
+10 % 3 * 2 + 1    // prediction: 3
+// step 1: 10 % 3 = 1
+// step 2: 1 * 2 = 2
+// step 3: 2 + 1 = 3
