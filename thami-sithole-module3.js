@@ -399,3 +399,8 @@ console.log(arr);           // [ 1, <1 empty item>, 3, 4 ]
 console.log(arr.length);    // 4
 console.log(arr[1]);        // 'undefined'
 // comment: delete is dangerous on arrays because it deletes the value but never the index position itself.
+
+// 4.
+delete Math.PI;
+console.log(Math.PI);   // 3.141592653589793
+// comment: first of all is not an object and it is a read-only constant, hence it can never be deleted.
