@@ -249,3 +249,8 @@ true && false || true && true   // prediction: true
 // step 3: 10 < 20 = true
 // step 4: true && true = true
 // step 5: true || true = true
+
+
+1000 * 1.15 * 0.9        // prediction: 1035
+// step 1: 1000 * 1.15 = 1150
+// step 2: 1150 * 0.9 = 1035 
