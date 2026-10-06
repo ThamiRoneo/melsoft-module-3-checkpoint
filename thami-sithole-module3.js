@@ -237,3 +237,8 @@ true && false || true && true   // prediction: true
 // step 1: true && false = false
 // step 2: false || true = true
 // step 3: true && true = true
+
+!false && !!0        // prediction: false
+// step 1: !false = true
+// step 2: !!0 = false
+// step 3: true && false = false
