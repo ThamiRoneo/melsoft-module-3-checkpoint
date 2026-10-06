@@ -226,3 +226,10 @@ form.addEventListener('submit', (e) => {
 100 / 4 / 5   // prediction: 5
 // step 1: 100 / 4 = 25
 // step 2: 25 / 5 = 5
+
+5 + 2 > 6 && 3 < 4    // prediction: true
+// step 1: 5 + 2 = 7
+// step 2: 7 > 6 = true
+// step 3: 3 < 4 = true
+// step 4: true && true = true
+
