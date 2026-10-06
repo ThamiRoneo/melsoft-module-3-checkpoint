@@ -242,3 +242,10 @@ true && false || true && true   // prediction: true
 // step 1: !false = true
 // step 2: !!0 = false
 // step 3: true && false = false
+
+5 > 3 && 10 < 20 || !(2 === "2")       // prediction: true
+// step 1: !(2 === "2") = true
+// step 2: 5 > 3 = true
+// step 3: 10 < 20 = true
+// step 4: true && true = true
+// step 5: true || true = true
