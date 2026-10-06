@@ -96,3 +96,14 @@ let age = 28;
 let fullName = firstName + ' ' + lastName;
 
 console.log(`Welcome back ${fullName}, you are ${age} years old.`)
+
+/**************************************
+* Challenge 2 - The Equality Deep Dive *
+**************************************/
+
+// Part A - Predict and verify
+
+0 == false;     // prediction: true
+// one-line note: 0 is the same as 'false' in terms of Boolean data type
+
+
