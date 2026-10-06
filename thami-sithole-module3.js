@@ -307,3 +307,24 @@ let notificationCount = userProfile.notificationCount ?? 0;
 // Nullish operator behaves differently because unlike OR operator if there are many operands,
 // it returns one that is not nullish. whereas, with the OR operator, it looks from left to right and returns
 // the right value if the left is null or undefined.
+
+// Part C - Guard clauses with && and ?.
+
+let user = {
+  name: 'David',
+  address: {
+    street: '15 St',
+    city: 'London'
+  }
+}
+
+const userCity = user && user.address && user.address.city;
+const city = user?.address.city;
+const address = user?.address ?? 'Unknown city';
+
+// Testing
+console.log(userCity);
+console.log(city);
+console.log(address);
+
+
