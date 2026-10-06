@@ -287,3 +287,23 @@ const gradingMarks = percentage >= 90 ? 'A' :
                      percentage >= 50 && percentage < 60 ? 'E' :
                      'F';
 
+// Part B - Short-circuit defaults in user profile
+
+let userProfile = {
+  displayName: "",
+  theme: "",
+  maxResults: 0,
+  lastLogin: null,
+  notificationCount: undefined
+  
+};
+
+let displayName = userProfile.displayName || 'Guest User';
+let theme = userProfile.theme || 'light';
+let maxResults = userProfile.maxResults || 10;
+let lastLogin = userProfile.lastLogin ?? 'Never';
+let notificationCount = userProfile.notificationCount ?? 0;
+
+// Nullish operator behaves differently because unlike OR operator if there are many operands,
+// it returns one that is not nullish. whereas, with the OR operator, it looks from left to right and returns
+// the right value if the left is null or undefined.
