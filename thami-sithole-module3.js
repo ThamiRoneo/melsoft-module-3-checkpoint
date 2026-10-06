@@ -327,4 +327,15 @@ console.log(userCity);
 console.log(city);
 console.log(address);
 
+// Part D - Predict the output
 
+null || undefined || 0 || "" || "finally"     // 'finally'
+null ?? undefined ?? 0 ?? "" ?? "finally"     //  0
+0 || "first truthy"                           // 'first truthy'
+0 ?? "first non-nullish"                      //  0
+true && false && "never reached"              //  false
+"first" && "second" && "third"                //  'third'
+false || (true && "yes")                      //  'yes'
+(false || true) && "yes"                      // 'yes
+1 && 2 && 3                                   //  3
+null?.foo?.bar?.baz                           //  undefined
