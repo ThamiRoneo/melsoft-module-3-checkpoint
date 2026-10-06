@@ -108,3 +108,6 @@ console.log(`Welcome back ${fullName}, you are ${age} years old.`)
 
 0 === false;    // prediction: false
 // one-line note: a numeric and Boolean value are not the same, hence the strict equality operator returns false
+
+"" == 0;        // prediction: true
+// one-line note: an empty string is converted to 0 before comparison
