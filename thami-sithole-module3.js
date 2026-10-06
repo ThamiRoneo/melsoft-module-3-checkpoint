@@ -404,3 +404,8 @@ console.log(arr[1]);        // 'undefined'
 delete Math.PI;
 console.log(Math.PI);   // 3.141592653589793
 // comment: first of all is not an object and it is a read-only constant, hence it can never be deleted.
+
+// Interview answer: I would not use delete because delete only removes the value by key and leaves an empty slot,
+// instead i could use splice() - it removes the specified element on an array and automatically shifts all the
+// the following elements to the left. for example: arr.splice(index, 1) - would remove element on index 1 and shift
+// all elements following the removed index to close the empty slot.
