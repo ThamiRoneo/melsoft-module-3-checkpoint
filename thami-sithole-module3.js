@@ -378,3 +378,16 @@ new Date() instanceof Date                // true
 // object was created by a specific constructor.
 
 
+// Part C - delete and its gotchas
+
+// 1.
+const user = { name: 'Lerato', age: 25, role: 'student' }
+delete.user.role;
+console.log(user)      //  before: { name: 'Lerato', age: 25, role: 'student' } after: { name: 'Lerato', age: 25 }
+
+// 2.
+let x = 5;
+delete x;
+console.log(x);
+// the log returns 5, why - because delete operator cannot delete a variables, it removes properties from an
+// object.
