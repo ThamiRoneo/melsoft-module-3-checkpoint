@@ -194,3 +194,13 @@ form.addEventListener('submit', (e) => {
 // I used the strict equality (===) to compare the values of the password fields.
 // Yes, my choice matters a lot specifically for the password comparison, because
 // it ensures that the values are compared as strings, not as numbers or other types.
+
+
+/**************************************
+* Challenge 3 - Operators Precedence  *
+**************************************/
+
+2 + 3 * 4 - 1   // prediction: 13
+// step 1: 3 * 4 = 12
+// step 2: 12 + 2 = 14
+// step 3: 14 - 1 = 13
