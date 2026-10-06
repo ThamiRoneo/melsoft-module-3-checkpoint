@@ -391,3 +391,11 @@ delete x;
 console.log(x);
 // the log returns 5, why - because delete operator cannot delete a variables, it removes properties from an
 // object.
+
+// 3.
+const arr = [1, 2, 3, 4];
+delete arr[1];
+console.log(arr);           // [ 1, <1 empty item>, 3, 4 ]
+console.log(arr.length);    // 4
+console.log(arr[1]);        // 'undefined'
+// comment: delete is dangerous on arrays because it deletes the value but never the index position itself.
