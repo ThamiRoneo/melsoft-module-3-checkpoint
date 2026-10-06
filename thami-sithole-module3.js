@@ -106,4 +106,5 @@ console.log(`Welcome back ${fullName}, you are ${age} years old.`)
 0 == false;     // prediction: true
 // one-line note: 0 is the same as 'false' in terms of Boolean data type
 
-
+0 === false;    // prediction: false
+// one-line note: a numeric and Boolean value are not the same, hence the strict equality operator returns false
