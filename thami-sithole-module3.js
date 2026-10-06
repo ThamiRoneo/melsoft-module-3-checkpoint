@@ -142,3 +142,13 @@ Nan == Nan;        // prediction: false
 Nan === Nan;       // prediction: false
 // one-line note: NaN is a special value that represents not-a-number, so it is not equal to any other value, including itself.
 
+Object.is(Nan, Nan);       // prediction: true
+// one-line note: Object.is() compares values and types, so NaN is considered equal to itself.
+
+[1,2,3] == "1,2,3";       // prediction: false
+// one-line note: Arrays are compared by reference, not by value, so [1,2,3] is not equal to "1,2,3".
+
+[] == false;       // prediction: false
+// one-line note: The empty array is not equal to false, as they are of different types.
+
+
