@@ -104,10 +104,17 @@ console.log(`Welcome back ${fullName}, you are ${age} years old.`)
 // Part A - Predict and verify
 
 0 == false;     // prediction: true
-// one-line note: 0 is the same as 'false' in terms of Boolean data type
+// one-line note: 0 is the same as 'false' in terms of Boolean data type.
 
 0 === false;    // prediction: false
-// one-line note: a numeric and Boolean value are not the same, hence the strict equality operator returns false
+// one-line note: a numeric and Boolean value are not the same, hence the strict equality operator returns false.
 
 "" == 0;        // prediction: true
-// one-line note: an empty string is converted to 0 before comparison
+// one-line note: an empty string is converted to 0 before comparison.
+
+"" === 0;       // prediction: false
+// one-line note: strict equality operator compares values and types, so an empty string is not the same as 0.
+
+"0" == 0;       // prediction: true
+// one-line note: a string '0' is converted to a numeric 0 before comparison.
+
