@@ -360,3 +360,21 @@ typeof undeclaredVariable           //  'undefined'
 
 // one-liner: An array is an reference type 'object', same as other reference types.
 
+// Part B - instanceof with real types
+
+[] instanceof Array                 // true 
+[] instanceof Object                // true
+{} instanceof Object                // true
+"hello" instanceof String //(false — why?) - it is because strings literals are primitive values, not objects
+new String("hello") instanceof String     // true
+42 instanceof Number                      // false
+new Date() instanceof Date                // true
+/abc/ instanceof RegExp                   // true
+
+// comment: typeof is the right tool when checking for undefined variables is the case, instanceof is wrong,
+// because typeof safely returns a string 'undefined' for undeclared variables, whereas, instance of throws
+// a ReferenceError. instaceof is the right tool when checking for custom class instances,and typeof is wrong,
+// because it always returns 'object' for any custom object, while instaceof correctly identifies if an 
+// object was created by a specific constructor.
+
+
