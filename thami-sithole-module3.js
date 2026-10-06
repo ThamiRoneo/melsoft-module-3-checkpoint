@@ -254,3 +254,7 @@ true && false || true && true   // prediction: true
 1000 * 1.15 * 0.9        // prediction: 1035
 // step 1: 1000 * 1.15 = 1150
 // step 2: 1150 * 0.9 = 1035 
+
+typeof 5 + 1     // prediction: number1
+// step 1: typeof 5 = 'number'
+// step 2: 'number' + 1 = 'number1'
