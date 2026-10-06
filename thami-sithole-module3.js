@@ -121,4 +121,18 @@ console.log(`Welcome back ${fullName}, you are ${age} years old.`)
 "0" === 0;      // prediction: false
 // one-line note: strict equality operator compares values and types, so a string '0' is not the same as a numeric 0.
 
+null == undefined;  // prediction: true
+// one-line note: null is converted to undefined before comparison, so they are considered equal.
+
+null === undefined; // prediction: false
+// one-line note: strict equality operator compares values and types, so null is not the same as undefined.
+
+null == 0;        // prediction: false
+// one-line note: null is not converted to 0 before comparison, object type is not equal to number.
+
+null >= 0;        // prediction: false
+// one-line note: null is of type object, not a number, so it is not greater than or equal to 0.
+
+null > 0;        // prediction: false
+// one-line note: null is of type object, not a number, so it is not greater than 0.
 
