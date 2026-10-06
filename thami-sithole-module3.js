@@ -258,3 +258,7 @@ true && false || true && true   // prediction: true
 typeof 5 + 1     // prediction: number1
 // step 1: typeof 5 = 'number'
 // step 2: 'number' + 1 = 'number1'
+
+typeof (5 + 1)     // prediction: 'number'
+// step 1: 5 + 1 = 6
+// step 2: typeof 6 = 'number'
