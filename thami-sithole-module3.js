@@ -201,42 +201,42 @@ form.addEventListener('submit', (e) => {
 **************************************/
 
 2 + 3 * 4 - 1   // prediction: 13
-// step 1: 3 * 4 = 12
-// step 2: 12 + 2 = 14
+// step 1: (3 * 4) = 12
+// step 2: (2 + 12) = 14
 // step 3: 14 - 1 = 13
 
 (2 + 3) * (4 - 1)   // prediction: 15
-// step 1: 2 + 3 = 5
-// step 2: 4 - 1 = 3
+// step 1: (2 + 3) = 5
+// step 2: (4 - 1) = 3
 // step 3: 5 * 3 = 15
 
 10 - 4 - 2    // prediction: 4
-//  step 1: 10 - 4 = 6
+//  step 1: (10 - 4) = 6
 // step 2: 6 - 2 = 4
 
 2 ** 3 ** 2   // prediction: 512
-// step 1: 3 ** 2 = 9
+// step 1: (3 ** 2) = 9
 // step 2: 2 ** 9 = 512
 
 10 % 3 * 2 + 1    // prediction: 3
-// step 1: 10 % 3 = 1
-// step 2: 1 * 2 = 2
+// step 1: (10 % 3) = 1
+// step 2: (1 * 2) = 2
 // step 3: 2 + 1 = 3
 
 100 / 4 / 5   // prediction: 5
-// step 1: 100 / 4 = 25
+// step 1: (100 / 4) = 25
 // step 2: 25 / 5 = 5
 
 5 + 2 > 6 && 3 < 4    // prediction: true
-// step 1: 5 + 2 = 7
-// step 2: 7 > 6 = true
-// step 3: 3 < 4 = true
+// step 1: (5 + 2) = 7
+// step 2: (7 > 6) = true
+// step 3: (3 < 4) = true
 // step 4: true && true = true
 
 true && false || true && true   // prediction: true
-// step 1: true && false = false
-// step 2: false || true = true
-// step 3: true && true = true
+// step 1: (true && false) = false
+// step 2: (true && true) = true
+// step 3: false ||true = true
 
 !false && !!0        // prediction: false
 // step 1: !false = true
@@ -245,28 +245,31 @@ true && false || true && true   // prediction: true
 
 5 > 3 && 10 < 20 || !(2 === "2")       // prediction: true
 // step 1: !(2 === "2") = true
-// step 2: 5 > 3 = true
-// step 3: 10 < 20 = true
-// step 4: true && true = true
+// step 2: (5 > 3) = true
+// step 3: (10 < 20) = true
+// step 4: (true && true) = true
 // step 5: true || true = true
 
 
 1000 * 1.15 * 0.9        // prediction: 1035
-// step 1: 1000 * 1.15 = 1150
+// step 1: (1000 * 1.15) = 1150
 // step 2: 1150 * 0.9 = 1035 
 
 typeof 5 + 1     // prediction: number1
-// step 1: typeof 5 = 'number'
+// step 1: (typeof 5) = 'number'
 // step 2: 'number' + 1 = 'number1'
 
 typeof (5 + 1)     // prediction: 'number'
-// step 1: 5 + 1 = 6
+// step 1: (5 + 1) = 6
 // step 2: typeof 6 = 'number'
 
 "5" + 3 * 2     // prediction: '56'
-// stwep 1: 3 * 2 = 6
+// stwep 1: (3 * 2) = 6
 // step 2: "5" + 6 = "56"
 
 "5" - 3 + 2     // prediction: 4
-// step 1: "5" - 3 = 2
+// step 1: ("5" - 3) = 2
 // step 2: 2 + 2 = 4
+
+// Interview answer: Parentheses can be added to an expression even when they are not needed to change the order of operations.
+// Again, to aid with readability.
