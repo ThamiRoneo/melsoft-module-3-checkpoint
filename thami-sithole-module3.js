@@ -118,3 +118,7 @@ console.log(`Welcome back ${fullName}, you are ${age} years old.`)
 "0" == 0;       // prediction: true
 // one-line note: a string '0' is converted to a numeric 0 before comparison.
 
+"0" === 0;      // prediction: false
+// one-line note: strict equality operator compares values and types, so a string '0' is not the same as a numeric 0.
+
+
