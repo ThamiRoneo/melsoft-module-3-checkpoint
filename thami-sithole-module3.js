@@ -339,3 +339,24 @@ false || (true && "yes")                      //  'yes'
 (false || true) && "yes"                      // 'yes
 1 && 2 && 3                                   //  3
 null?.foo?.bar?.baz                           //  undefined
+
+
+/*******************************************
+* Challenge 5 - typeof, instanceof, delete *
+*******************************************/
+
+// Part A - typeof masteery
+
+typeof 42                           // 'number'
+typeof "hello"                      // 'string'
+typeof true                         // 'boolean'
+typeof undefined                    // 'undefined
+typeof null(THE famous bug)         // SyntaxError
+typeof {}                           // 'object'
+typeof [](another trap)             // SyntaxError
+typeof function () { }              // 'function'
+typeof NaN                          // 'number'
+typeof undeclaredVariable           //  'undefined'
+
+// one-liner: An array is an reference type 'object', same as other reference types.
+
