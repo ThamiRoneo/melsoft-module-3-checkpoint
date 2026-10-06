@@ -233,3 +233,7 @@ form.addEventListener('submit', (e) => {
 // step 3: 3 < 4 = true
 // step 4: true && true = true
 
+true && false || true && true   // prediction: true
+// step 1: true && false = false
+// step 2: false || true = true
+// step 3: true && true = true
