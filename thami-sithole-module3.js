@@ -266,3 +266,7 @@ typeof (5 + 1)     // prediction: 'number'
 "5" + 3 * 2     // prediction: '56'
 // stwep 1: 3 * 2 = 6
 // step 2: "5" + 6 = "56"
+
+"5" - 3 + 2     // prediction: 4
+// step 1: "5" - 3 = 2
+// step 2: 2 + 2 = 4
