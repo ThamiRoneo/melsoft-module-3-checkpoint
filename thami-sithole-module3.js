@@ -273,3 +273,17 @@ typeof (5 + 1)     // prediction: 'number'
 
 // Interview answer: Parentheses can be added to an expression even when they are not needed to change the order of operations.
 // Again, to aid with readability.
+
+/***************************************************
+* Challenge 4 - Ternary and Short-Circuit Patterns *
+***************************************************/
+
+// Part A - Ternary chain for grade conversion
+
+const gradingMarks = percentage >= 90 ? 'A' :
+                     percentage >= 80 && percentage < 90 ? 'B' :
+                     percentage >= 70 && percentage < 80 ? 'C' :
+                     percentage >= 60 && percentage < 70 ? 'D' :
+                     percentage >= 50 && percentage < 60 ? 'E' :
+                     'F';
+
