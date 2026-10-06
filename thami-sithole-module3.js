@@ -136,3 +136,9 @@ null >= 0;        // prediction: false
 null > 0;        // prediction: false
 // one-line note: null is of type object, not a number, so it is not greater than 0.
 
+Nan == Nan;        // prediction: false
+// one-line note: NaN is a special value that represents not-a-number, so it is not equal to any other value, including itself.
+
+Nan === Nan;       // prediction: false
+// one-line note: NaN is a special value that represents not-a-number, so it is not equal to any other value, including itself.
+
