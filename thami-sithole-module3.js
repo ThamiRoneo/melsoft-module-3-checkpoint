@@ -461,6 +461,20 @@ user1 &~ WRITE;
 // single number: 0101   (7)
 console.log(user1);   // (7) binary 0101
 
+// #7
+toggleAdminOn = user1 ^ ADMIN;
+toggleAdminOff = user1 ^ ADMIN ^ ADMIN;
+// READ binary  : 0001
+// DELETE binary: 0100
+// ADMIN binary : 1000    [toggle on]
+// single number: 1101   (13)
+console.log(toggleAdminOn);   // 13 binary 1101
+// READ binary  : 0001
+// DELETE binary: 0100
+// ADMIN binary : 0000    [toggle off]
+// single number: 0101    (5)
+console.log(toggleAdminOff);  // 5 binary 0101
+
 
 /**************************************
 * Challenge 9 - Big Hunt              *
