@@ -426,7 +426,8 @@ const ADMIN = 8;    // binary 1000
 //  (1): 0001
 //  (2): 0010
 //  (3): 0011
-console.log(READ | WRITE);    // (3) binary 0011
+const user1 = READ | WRITE;
+console.log(user1);    // (3) binary 0011
 
 // #2
 // binary         0001
@@ -434,7 +435,12 @@ console.log(READ | WRITE);    // (3) binary 0011
 // binary         0100
 // binary         1000
 // single number: 1111  (15)
-console.log(READ | WRITE | DELETE | ADMIN);   // (15)  binary 1111
+const admin = READ | WRITE | DELETE | ADMIN;
+console.log(admin);   // (15)  binary 1111
+
+// #3
+let checkUser = user1 & 1 ? 'Yes' : 'No';
+console.log(checkUser);       // 'Yes'
 
 
 /**************************************
