@@ -462,6 +462,7 @@ user1 &~ WRITE;
 console.log(user1);   // (7) binary 0101
 
 // #7
+user1 = READ | DELETE;
 toggleAdminOn = user1 ^ ADMIN;
 toggleAdminOff = user1 ^ ADMIN ^ ADMIN;
 // READ binary  : 0001
@@ -474,6 +475,8 @@ console.log(toggleAdminOn);   // 13 binary 1101
 // ADMIN binary : 0000    [toggle off]
 // single number: 0101    (5)
 console.log(toggleAdminOff);  // 5 binary 0101
+
+// #8
 
 
 /**************************************
