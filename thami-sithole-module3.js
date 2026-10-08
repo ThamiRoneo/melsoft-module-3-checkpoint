@@ -411,6 +411,19 @@ console.log(Math.PI);   // 3.141592653589793
 // all elements following the removed index to close the empty slot.
 
 
+/********************************************************
+* Challenge 6 - Bitwise Operators & Permission System   *
+********************************************************/
+
+const READ = 1;
+const WRITE = 2;
+const DELETE = 4;
+const ADMIN = 8;
+
+// 1.
+console.log(READE | WRITE);    // 3
+
+
 /**************************************
 * Challenge 9 - Big Hunt              *
 **************************************/
