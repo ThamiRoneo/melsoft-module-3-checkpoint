@@ -439,8 +439,12 @@ const admin = READ | WRITE | DELETE | ADMIN;
 console.log(admin);   // (15)  binary 1111
 
 // #3
-let checkUser = user1 & 1 ? 'Yes' : 'No';
-console.log(checkUser);       // 'Yes'
+let checkRead = user1 & 1 ? 'Yes' : 'No';
+console.log(checkRead);       // 'Yes'
+
+// #4
+let checkDelete = user1 & 4 ? 'Yes' : 'No';
+console.log(checkDelete);     // 'No'
 
 
 /**************************************
