@@ -415,13 +415,26 @@ console.log(Math.PI);   // 3.141592653589793
 * Challenge 6 - Bitwise Operators & Permission System   *
 ********************************************************/
 
-const READ = 1;
-const WRITE = 2;
-const DELETE = 4;
-const ADMIN = 8;
+const READ = 1;     // binary 0001
+const WRITE = 2;    // binary 0010
+const DELETE = 4;   // binary 0100
+const ADMIN = 8;    // binary 1000
 
-// 1.
-console.log(READE | WRITE);    // 3
+// #1
+// binaray steps - to store permission as a single number using OR operator
+// means that either one of the bits has to be 1 for the single nuumber to be 1.
+//  (1): 0001
+//  (2): 0010
+//  (3): 0011
+console.log(READ | WRITE);    // (3) binary 0011
+
+// #2
+// binary         0001
+// binary         0010
+// binary         0100
+// binary         1000
+// single number: 1111  (15)
+console.log(READ | WRITE | DELETE | ADMIN);   // (15)  binary 1111
 
 
 /**************************************
