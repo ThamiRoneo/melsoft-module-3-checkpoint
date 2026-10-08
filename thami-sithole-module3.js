@@ -477,7 +477,8 @@ console.log(toggleAdminOn);   // 13 binary 1101
 console.log(toggleAdminOff);  // 5 binary 0101
 
 // #8
-
+const SUPER_ADMIN = ADMIN << 1;
+console.log(SUPER_ADMIN);    // 16 binary 10000
 
 /**************************************
 * Challenge 9 - Big Hunt              *
