@@ -546,6 +546,22 @@ const bankCharges = balance >= 0 && balance < 1000 ? 'R 25' :
 console.log(`Monthly bank charge fee for this month: ${bankCharges}`);
 console.log(`Annual fee on the balance: R ${annualFee.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 
+// Scenario 3 - Multi-currency  transfer with floating-point careful
+// declaring and assigning variables
+let bankCharge = 0.025;
+let zarAmount = 15730.33;
+let usdExchangeRate = 18.42;
+
+// calculation
+let commisonInZar = zarAmount * bankCharge;
+let amountAfterCommission = zarAmount + commisonInZar;
+let usdAmount = amountAfterCommission / usdExchangeRate;
+
+// logging the results
+console.log(`The commission in ZAR: R ${commisonInZar.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`The ZAR amount after commission: R ${amountAfterCommission.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`The USD amount received: $ ${usdAmount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+
 /**************************************
 * Challenge 9 - Big Hunt              *
 **************************************/
