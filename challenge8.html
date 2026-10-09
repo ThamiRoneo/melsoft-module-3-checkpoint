@@ -32,7 +32,15 @@ summary = window.alert(`Name: ${name}\nAge: ${age}\nMembership Tier: ${membershi
 console.log(summary);
 
 // Interview answers:
-// #1: 
+// #1: Blocking refers to state where if the user does not interact with the dialog of either alert/confirm/prompt the browser wont
+// process any other code. Nothing gets processed until the dialog is canceled or interacted with.
+// Blocking is a problem for modern web apps because a blocking dialog freezes the entire application, dialogs are disruptpive and disturbs
+// user's workflow, and for security the blocking allows malicious sites to lock up browser by looping alerts.
+
+// #2: In a real modern applications developers can use in-app toast notifications instead of bloacking dialogs.
+
+// #3: window.prompt() returns nothing (null) and it exists its state immediately when the user clicks 'Cancel' and when the user leaves the field
+// blank and clicks Ok it returns an empty string (""). 
 </script>
 </body>
 </html>
