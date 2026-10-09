@@ -40,7 +40,7 @@ console.log(`Cart Total by end: R ${cartTotal.toFixed(2)}`);
 // 3. Comparison
 // Scenario:
 
-function signUpValidation(current_email, confirmed_email, password, age, ) {
+function signUpValidation(typedEmail, confirmedEmail, password, age, ) {
 
   if (age < 18) {
     console.log('Must be atleast 18 years or older.');
@@ -48,11 +48,11 @@ function signUpValidation(current_email, confirmed_email, password, age, ) {
   if (password.length < 8) {
     console.log('Password must be at least 8 characters.');
   }
-  if (current_email !== confirmed_email) {
+  if (typedEmail !== confirmedEmail) {
     console.log('Emails does not match.');
   }
 
-  return `Signed up successfully! ${email}`
+  return `Signed up successfully! ${confirmedEmail}`
 }
 
 // testing validations
