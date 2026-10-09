@@ -21,17 +21,21 @@ console.log('1. Arithmetic (3 operators minimum, including modulo');
 console.log(`Total study time for Student A and Student B: ${hours} hours and ${minutes} minutes\n`);
 
 // 2. Assignment (at least 3 compound operators)
-// Scenario: Interest earned by the beginning of the investment is 0. Three deposits are made at the beginning of each month
-// respectively at R100, R200, and R300. Interest per month is calculated at 5% of the total balance.
-// At the end of the second month, R100 was withdrawn.
+// Scenario: 
+let item1 = 100;
+let item2 = 200;
+let item3 = 300;
+let cartTotal = 0
+let discountPercentage = 0.10
+let vatRate = 0.15;
 
-cartTotal += items[0] + items[1] + items[2];
-discount *= cartTotal;
-vat *= cartTotal;
-cartTotal -= discount;
-cartTotal += vat;
+cartTotal += item1 + item2 + item3;
+discountPercentage *= cartTotal;
+vatRate *= cartTotal;
+cartTotal -= discountPercentage;
+cartTotal += vatRate;
 
-console.log(`Cart Total by end: R ${cartTotal}`);
+console.log(`Cart Total by end: R ${cartTotal.toFixed(2)}`);
 
 // 3. Comparison
 // Scenario:
