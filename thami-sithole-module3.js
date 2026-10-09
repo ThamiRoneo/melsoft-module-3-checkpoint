@@ -562,6 +562,43 @@ console.log(`The commission in ZAR: R ${commisonInZar.toFixed(2).replace(/\B(?=(
 console.log(`The ZAR amount after commission: R ${amountAfterCommission.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 console.log(`The USD amount received: $ ${usdAmount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 
+
+/**************************************
+* Challenge 8 - Usr Interaction       *
+**************************************/
+
+let greeting;
+let namePrompt;
+let agePrompt;
+let membershipTier;
+let subscription = false;
+let summary;
+
+greeting = window.alert("Hello, Welcome to JS user interaction :)");
+namePrompt = window.prompt('What is your name?');
+agePrompt = Number(window.prompt('How old are you?'));
+subscription = window.confirm('Do you want to subscribe to our newsletter?');
+
+
+if (namePrompt == '' | null) {
+  namePrompt = 'Guest';
+  console.log(namePrompt);
+
+  if (agePrompt != NaN && (agePrompt >= 1 && agePrompt <= 59)) {
+    
+  } else {
+    console.log(prompt.agePrompt)
+  }
+} else {
+  console.log(namePrompt);
+}
+
+membershipTier = agePrompt < 18 ? 'Youth' :
+  agePrompt >= 18 && agePrompt <= 59 ? 'Adult' : 'Senior';
+
+summary = window.alert(`Name: ${namePrompt}\nAge: ${agePrompt}\nMembership Tier: ${membershipTier}\nNewsletter subscription status: ${subscription}`)
+console.log(summary);
+
 /**************************************
 * Challenge 9 - Big Hunt              *
 **************************************/
