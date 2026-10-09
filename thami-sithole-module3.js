@@ -381,8 +381,8 @@ new Date() instanceof Date                // true
 // Part C - delete and its gotchas
 
 // 1.
-const user = { name: 'Lerato', age: 25, role: 'student' }
-delete.user.role;
+user = { name: 'Lerato', age: 25, role: 'student' }
+delete user.role;
 console.log(user)      //  before: { name: 'Lerato', age: 25, role: 'student' } after: { name: 'Lerato', age: 25 }
 
 // 2.
@@ -517,7 +517,7 @@ let compoundedMonthly = 12;
 let time = 3;
 let totalBalance, totalInterestEarned, effectiveAnnualRate;
 
-totalBalance = initialDeposit * (1 + annualInterest / compoundedMonthly) ^ (compoundedMonthly * time);
+totalBalance = initialDeposit * (1 + annualInterest / compoundedMonthly) ** (compoundedMonthly * time);
 
 totalInterestEarned = totalBalance - initialDeposit;
 
@@ -562,42 +562,8 @@ console.log(`The commission in ZAR: R ${commisonInZar.toFixed(2).replace(/\B(?=(
 console.log(`The ZAR amount after commission: R ${amountAfterCommission.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 console.log(`The USD amount received: $ ${usdAmount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 
-
-/**************************************
-* Challenge 8 - Usr Interaction       *
-**************************************/
-
-let greeting;
-let namePrompt;
-let agePrompt;
-let membershipTier;
-let subscription = false;
-let summary;
-
-greeting = window.alert("Hello, Welcome to JS user interaction :)");
-namePrompt = window.prompt('What is your name?');
-agePrompt = Number(window.prompt('How old are you?'));
-subscription = window.confirm('Do you want to subscribe to our newsletter?');
-
-
-if (namePrompt == '' | null) {
-  namePrompt = 'Guest';
-  console.log(namePrompt);
-
-  if (agePrompt != NaN && (agePrompt >= 1 && agePrompt <= 59)) {
-    
-  } else {
-    console.log(prompt.agePrompt)
-  }
-} else {
-  console.log(namePrompt);
-}
-
-membershipTier = agePrompt < 18 ? 'Youth' :
-  agePrompt >= 18 && agePrompt <= 59 ? 'Adult' : 'Senior';
-
-summary = window.alert(`Name: ${namePrompt}\nAge: ${agePrompt}\nMembership Tier: ${membershipTier}\nNewsletter subscription status: ${subscription}`)
-console.log(summary);
+// Final question answer: Floating-point precision caused me potential problems on scenario 1 when calculating the total balance,
+//what helped was rounding to Fixed decimal place (2).
 
 /**************************************
 * Challenge 9 - Big Hunt              *
@@ -628,9 +594,44 @@ var discountAmount = subtotal * discount;
 var afterDiscount = subtotal - discountAmount;
 var vat = afterDiscount * 0.15;
 var total = afterDiscount + vat;
-var canCheckout = isLoggedIn && customerAge >= 18 ? true : false;
+var canCheckout = isLoggedIn && (customerAge >= 18) ? true : false;
 console.log("Can checkout?", canCheckout);
 var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
 var finalTotal = total - seniorDiscount;
 console.log("Total: R" + finalTotal.toFixed(2));
 // === END OF SCRIPT ===
+
+/**************************************
+* Challenge 10 - Self Reflection      *
+**************************************/
+
+// #1: Single-characters operators are bitwise operators, meaning they treat operands as a sequence of zeros and ones and the always check both operands.
+//     Double-character operators are logical operators, meaning they are treated as booleans, and they stop evaluating as soon as the results are determined.
+// 
+// #2: Nullish coalescing I would prefer it when differentiating between explicitly null or undefined, and valid falsy values.
+// Example:
+const adminLimit = 10;
+const userLimit = 0;
+
+// 0 is not null/undefined, so it is preserved
+finalLimit = userLimit ?? adminLimit;       //Correct behaviour
+
+console.log(finalLimit); // Output: 0
+
+// 0 is falsy - the operator incorrectly swaps it for the default
+finalLimit = userLimit || adminLimit;           // Incorrect behaviour
+
+console.log(finalLimit); // Output: 10
+
+// #3: typeof null returns 'object' because of the historical bug in Javascript's original implementation from 1995. Early Javascript
+// engines stored values as 32-bit chunk where lower bits indicated the type tag - the tag for objects was 000 (binary),
+// and null was all zeros (null pointer). Because the typeof operator lacked specific logic to distinguish null from objects,
+// it incorrectly identified the zeroed type tag as an object. The behavior was preserved due to backward compatibility, as fixing it
+// would break huge amount of existing web code.
+// I would use strict equality rather than typeof to check if whether a variable is null without being tricked by the bug.
+
+// #4: 0.1 and 0.2 are not represented accurately in binary and when added together they are slightly above 0.3, hence 0.1 + 0.2 is not equal 0.3.
+// To handle such precision issues i think banks use rounding to a fixed decimal precision or use a small tolerance (Epsilon).
+
+// #5: For me Compound Assignment operators presented a little bit of challenge. What changed that situation was exploring more resources (Docs, W3Schools, etc)
+// and having practical practice.
