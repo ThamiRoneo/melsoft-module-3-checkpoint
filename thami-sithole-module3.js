@@ -480,6 +480,54 @@ console.log(toggleAdminOff);  // 5 binary 0101
 const SUPER_ADMIN = ADMIN << 1;
 console.log(SUPER_ADMIN);    // 16 binary 10000
 
+// Interview answers:
+// #1: A team would opt to use bitwise flags for permissions instead of storing an array for the following reasons:
+// - Performance efficiency: bitwise and checks operate on a single CPU instruction, which enables the program to run faster.
+// - Memory and network efficiency: since permissions are stored as single integer they reduce payload size, saving memory.
+
+// #2: The real-world downside of using bitwise permissions is that they are hard to debug, adding new permissions require careful bit
+// management to avoid conflicts and a 64-bit integer restricts to unique permission.
+// I would not use this pattern when I have less than 30 permissions (fewer).
+
+// #3: The difference lies on evaluation behaviour and operand types.
+// The double (&&, ||) operators are logical operators (evaluate operands as Booleans) and they support short-circuiting, meaning they stop evaluating as 
+// soon as the results are determined.
+// The single (&, |) operators are bitwise operators that always evaluate both operands.
+// Silent bug case using this challenge's scenario:
+ user1 = 3; // Binary: 11 (has both read and write)
+
+// Correct logical check
+if (user1 & 1 && user1 & 2) {
+  console.log("Has both"); // Works correctly
+}
+
+// Incorrect use of bitwise & in place of &&
+if (user1 & 1 & user1 & 2) {
+  console.log("Has both"); // Silent failure!
+}   
+
+/**********************************************
+* Challenge 7 - Real-World Banking Calculator *
+**********************************************/
+
+// Scenario 1 - Savings interest
+let initialDeposit = 25000;
+let annualInterest = 0.075;
+let compoundedMonthly = 12;
+let time = 3;
+let totalBalance, totalInterestEarned, effectiveAnnualRate;
+
+totalBalance = initialDeposit * (1 + annualInterest / compoundedMonthly) ^ (compoundedMonthly * time);
+
+totalInterestEarned = totalBalance - initialDeposit;
+
+effectiveAnnualRate = ((1 + annualInterest / compoundedMonthly) ** compoundedMonthly) - 1;
+
+console.log(`Total balance after 3 years: R ${totalBalance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`Total interest earned: R ${totalInterestEarned.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`Annual interest rate: ${effectiveAnnualRate.toFixed(2)}%`);
+
+
 /**************************************
 * Challenge 9 - Big Hunt              *
 **************************************/
