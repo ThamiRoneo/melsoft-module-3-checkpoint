@@ -21,7 +21,7 @@ console.log('1. Arithmetic (3 operators minimum, including modulo');
 console.log(`Total study time for Student A and Student B: ${hours} hours and ${minutes} minutes\n`);
 
 // 2. Assignment (at least 3 compound operators)
-// Scenario: 
+// Scenario:
 let item1 = 100;
 let item2 = 200;
 let item3 = 300;
@@ -40,30 +40,38 @@ console.log(`Cart Total by end: R ${cartTotal.toFixed(2)}`);
 // 3. Comparison
 // Scenario:
 
-function signUpValidation() {
-  if (User >= 18) {
-    if (password.length >= 8) {
-      if (typed_email = true && typed_email === confirmed_email) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      return false;
-    }
-  } else {
-    return false;
+function signUpValidation(current_email, confirmed_email, password, age, ) {
+
+  if (age < 18) {
+    console.log('Must be atleast 18 years or older.');
   }
+  if (password.length < 8) {
+    console.log('Password must be at least 8 characters.');
+  }
+  if (current_email !== confirmed_email) {
+    console.log('Emails does not match.');
+  }
+
+  return `Signed up successfully! ${email}`
 }
+
+// testing validations
+const result1 = signUpValidation("email@example.com", "email@example.com", "@ed90578", 19);  // passes
+const result2 = signUpValidation("email@example.com", "don@example.com", "@ed90578", 17);    // fails
+// logging results
+console.log(result2);
+
 
 // 4. Logical
 // Scenario:
+let isUserLoggedIn = true;
+let isEmailVerified = false;
+let isUserAdmin = false;
 
-if (isUserLoggedIn == true && isUserEmailVerified == true || isUserAdmin == true) {
-  return true;
-} else {
-  return false;
-}
+let dashboardAccess = isUserLoggedIn && isEmailVerified || isUserAdmin
+  ? "Access Granted: Welcome to Premium Dashboard" : "Access Denied: You do no meet all criteria";
+
+console.log(dashboardAccess);
 
 // 5. Unary
 // Scenario:
@@ -83,13 +91,13 @@ if (!isDarkMode) {
 // 6. Ternary / Conditional
 // Scenario:
 
-if (membershipType === 'premium') {
-  console.log('Premium membership');
-} else {
-  console.log('Free membership');
-}
+membershipTier = 'free';
 
-membershipType === premium ? console.log('Premium membership') : console.log('Free membership');
+membershipBadge = membershipTier == 'premium' ? 'Premium Member' :
+  membershipTier == 'trail' ? 'Trail Member' : 'Free Member';
+
+
+console.log(membershipBadge);
 
 // 7. String concatenation (the + operator doing double duty)
 // Scenario:
@@ -140,13 +148,13 @@ null >= 0;        // prediction: false
 null > 0;        // prediction: false
 // one-line note: null is of type object, not a number, so it is not greater than 0.
 
-Nan == Nan;        // prediction: false
+NaN == NaN;        // prediction: false
 // one-line note: NaN is a special value that represents not-a-number, so it is not equal to any other value, including itself.
 
-Nan === Nan;       // prediction: false
+NaN === NaN;       // prediction: false
 // one-line note: NaN is a special value that represents not-a-number, so it is not equal to any other value, including itself.
 
-Object.is(Nan, Nan);       // prediction: true
+Object.is(NaN, NaN);       // prediction: true
 // one-line note: Object.is() compares values and types, so NaN is considered equal to itself.
 
 [1,2,3] == "1,2,3";       // prediction: false
@@ -284,12 +292,26 @@ typeof (5 + 1)     // prediction: 'number'
 
 // Part A - Ternary chain for grade conversion
 
+// testing variables
+percentage = 95;
+// percentage = 82;
+// percentage = 73;
+// percentage = 65;
+// percentage = 54;
+// percentage = 54;
+// percentage = 42;
+// percentage = 0;
+
 const gradingMarks = percentage >= 90 ? 'A' :
                      percentage >= 80 && percentage < 90 ? 'B' :
                      percentage >= 70 && percentage < 80 ? 'C' :
                      percentage >= 60 && percentage < 70 ? 'D' :
                      percentage >= 50 && percentage < 60 ? 'E' :
                      'F';
+
+
+console.log(gradingMarks);
+
 
 // Part B - Short-circuit defaults in user profile
 
@@ -334,16 +356,34 @@ console.log(address);
 // Part D - Predict the output
 
 null || undefined || 0 || "" || "finally"     // 'finally'
-null ?? undefined ?? 0 ?? "" ?? "finally"     //  0
-0 || "first truthy"                           // 'first truthy'
-0 ?? "first non-nullish"                      //  0
-true && false && "never reached"              //  false
-"first" && "second" && "third"                //  'third'
-false || (true && "yes")                      //  'yes'
-(false || true) && "yes"                      // 'yes
-1 && 2 && 3                                   //  3
-null?.foo?.bar?.baz                           //  undefined
+console.log(null || undefined || 0 || "" || "finally");
 
+null ?? undefined ?? 0 ?? "" ?? "finally"     //  0
+console.log(null ?? undefined ?? 0 ?? "" ?? "finally" );
+
+0 || "first truthy"                           // 'first truthy'
+console.log(0 || "first truthy"  );
+
+0 ?? "first non-nullish"                      //  0
+console.log(0 ?? "first non-nullish");
+
+true && false && "never reached"              //  false
+console.log(true && false && "never reached" );
+
+"first" && "second" && "third"                //  'third'
+console.log("first" && "second" && "third" );
+
+false || (true && "yes")                      //  'yes'
+console.log(false || (true && "yes"));
+
+(false || true) && "yes"                      // 'yes
+console.log((false || true) && "yes" );
+
+1 && 2 && 3                                   //  3
+console.log(1 && 2 && 3 );
+
+null?.foo?.bar?.baz                           //  undefined
+console.log(null?.foo?.bar?.baz);
 
 /*******************************************
 * Challenge 5 - typeof, instanceof, delete *
@@ -351,29 +391,29 @@ null?.foo?.bar?.baz                           //  undefined
 
 // Part A - typeof masteery
 
-typeof 42                           // 'number'
-typeof "hello"                      // 'string'
-typeof true                         // 'boolean'
-typeof undefined                    // 'undefined
-typeof null(THE famous bug)         // SyntaxError
-typeof {}                           // 'object'
-typeof [](another trap)             // SyntaxError
-typeof function () { }              // 'function'
-typeof NaN                          // 'number'
-typeof undeclaredVariable           //  'undefined'
+typeof 42;                           // 'number'
+typeof "hello";                      // 'string'
+typeof true;                         // 'boolean'
+typeof undefined;                    // 'undefined
+typeof null(THE, famous, bug);         // SyntaxError
+typeof {};                           // 'object'
+typeof [](another, trap);             // SyntaxError
+typeof function () { };              // 'function'
+typeof NaN;                          // 'number'
+typeof undeclaredVariable;           //  'undefined'
 
 // one-liner: An array is an reference type 'object', same as other reference types.
 
 // Part B - instanceof with real types
 
-[] instanceof Array                 // true
-[] instanceof Object                // true
-{} instanceof Object                // true
-"hello" instanceof String //(false — why?) - it is because strings literals are primitive values, not objects
-new String("hello") instanceof String     // true
-42 instanceof Number                      // false
-new Date() instanceof Date                // true
-/abc/ instanceof RegExp                   // true
+[] instanceof Array;                 // true
+[] instanceof Object;                // true
+Object instanceof {};                // true
+"hello" instanceof String; //(false — why?) - it is because strings literals are primitive values, not objects
+new String("hello") instanceof String;     // true
+42 instanceof Number;                      // false
+new Date() instanceof Date;                // true
+/abc/ instanceof RegExp;                   // true
 
 // comment: typeof is the right tool when checking for undefined variables is the case, instanceof is wrong,
 // because typeof safely returns a string 'undefined' for undeclared variables, whereas, instance of throws
@@ -611,7 +651,7 @@ console.log("Total: R" + finalTotal.toFixed(2));
 
 // #1: Single-characters operators are bitwise operators, meaning they treat operands as a sequence of zeros and ones and the always check both operands.
 //     Double-character operators are logical operators, meaning they are treated as booleans, and they stop evaluating as soon as the results are determined.
-// 
+//
 // #2: Nullish coalescing I would prefer it when differentiating between explicitly null or undefined, and valid falsy values.
 // Example:
 const adminLimit = 10;
