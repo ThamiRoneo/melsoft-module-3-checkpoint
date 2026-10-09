@@ -22,10 +22,10 @@ console.log(`Total study time for Student A and Student B: ${hours} hours and ${
 
 // 2. Assignment (at least 3 compound operators)
 // Scenario: Interest earned by the beginning of the investment is 0. Three deposits are made at the beginning of each month
-// respectively at R100, R200, and R300. Interest per month is calculated at 5% of the total balance. 
+// respectively at R100, R200, and R300. Interest per month is calculated at 5% of the total balance.
 // At the end of the second month, R100 was withdrawn.
 
-cartTotal += items[0] + items[1] + items[2]; 
+cartTotal += items[0] + items[1] + items[2];
 discount *= cartTotal;
 vat *= cartTotal;
 cartTotal -= discount;
@@ -34,7 +34,7 @@ cartTotal += vat;
 console.log(`Cart Total by end: R ${cartTotal}`);
 
 // 3. Comparison
-// Scenario: 
+// Scenario:
 
 function signUpValidation() {
   if (User >= 18) {
@@ -53,7 +53,7 @@ function signUpValidation() {
 }
 
 // 4. Logical
-// Scenario: 
+// Scenario:
 
 if (isUserLoggedIn == true && isUserEmailVerified == true || isUserAdmin == true) {
   return true;
@@ -62,7 +62,7 @@ if (isUserLoggedIn == true && isUserEmailVerified == true || isUserAdmin == true
 }
 
 // 5. Unary
-// Scenario: 
+// Scenario:
 
 let inputFieldString = '25';
 let inputFieldNumber = +inputFieldString;
@@ -77,7 +77,7 @@ if (!isDarkMode) {
 }
 
 // 6. Ternary / Conditional
-// Scenario: 
+// Scenario:
 
 if (membershipType === 'premium') {
   console.log('Premium membership');
@@ -253,7 +253,7 @@ true && false || true && true   // prediction: true
 
 1000 * 1.15 * 0.9        // prediction: 1035
 // step 1: (1000 * 1.15) = 1150
-// step 2: 1150 * 0.9 = 1035 
+// step 2: 1150 * 0.9 = 1035
 
 typeof 5 + 1     // prediction: number1
 // step 1: (typeof 5) = 'number'
@@ -295,7 +295,7 @@ let userProfile = {
   maxResults: 0,
   lastLogin: null,
   notificationCount: undefined
-  
+
 };
 
 let displayName = userProfile.displayName || 'Guest User';
@@ -362,7 +362,7 @@ typeof undeclaredVariable           //  'undefined'
 
 // Part B - instanceof with real types
 
-[] instanceof Array                 // true 
+[] instanceof Array                 // true
 [] instanceof Object                // true
 {} instanceof Object                // true
 "hello" instanceof String //(false — why?) - it is because strings literals are primitive values, not objects
@@ -374,7 +374,7 @@ new Date() instanceof Date                // true
 // comment: typeof is the right tool when checking for undefined variables is the case, instanceof is wrong,
 // because typeof safely returns a string 'undefined' for undeclared variables, whereas, instance of throws
 // a ReferenceError. instaceof is the right tool when checking for custom class instances,and typeof is wrong,
-// because it always returns 'object' for any custom object, while instaceof correctly identifies if an 
+// because it always returns 'object' for any custom object, while instaceof correctly identifies if an
 // object was created by a specific constructor.
 
 
@@ -490,7 +490,7 @@ console.log(SUPER_ADMIN);    // 16 binary 10000
 // I would not use this pattern when I have less than 30 permissions (fewer).
 
 // #3: The difference lies on evaluation behaviour and operand types.
-// The double (&&, ||) operators are logical operators (evaluate operands as Booleans) and they support short-circuiting, meaning they stop evaluating as 
+// The double (&&, ||) operators are logical operators (evaluate operands as Booleans) and they support short-circuiting, meaning they stop evaluating as
 // soon as the results are determined.
 // The single (&, |) operators are bitwise operators that always evaluate both operands.
 // Silent bug case using this challenge's scenario:
@@ -504,7 +504,7 @@ if (user1 & 1 && user1 & 2) {
 // Incorrect use of bitwise & in place of &&
 if (user1 & 1 & user1 & 2) {
   console.log("Has both"); // Silent failure!
-}   
+}
 
 /**********************************************
 * Challenge 7 - Real-World Banking Calculator *
@@ -527,6 +527,24 @@ console.log(`Total balance after 3 years: R ${totalBalance.toFixed(2).replace(/\
 console.log(`Total interest earned: R ${totalInterestEarned.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 console.log(`Annual interest rate: ${effectiveAnnualRate.toFixed(2)}%`);
 
+// Scenario 2 - Tiered account fees
+// Test balances
+let balance = 500;
+//let balance = 1500;
+//let balance = 10000;
+//let balance = 50000;
+
+
+// calculating annual fee on balance
+let annualFee = balance * 12;
+
+const bankCharges = balance >= 0 && balance < 1000 ? 'R 25' :
+  balance >= 1000 && balance < 5000 ? 'R 50' :
+    balance >= 5000 && balance < 25000 ? 'R 75' :
+      'R 0 (fees waived)';
+
+console.log(`Monthly bank charge fee for this month: ${bankCharges}`);
+console.log(`Annual fee on the balance: R ${annualFee.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 
 /**************************************
 * Challenge 9 - Big Hunt              *
@@ -540,7 +558,7 @@ console.log(`Annual interest rate: ${effectiveAnnualRate.toFixed(2)}%`);
 // 6. var discount = discountCode == "SAVE10" ? 0.1 : 0; - == equality is not a strict one and a discount is a discount.
 // 7. var canCheckout = isLoggedIn && customerAge > 18; - condition passes even when they wrong instead applying a proper
 // ternay chain it is a good fix
-// 
+//
 // Corrected Version:
 // // === JUNIOR DEVELOPER'S CART SCRIPT (DO NOT TRUST ANY LINE) ===
 var item1Price = 199.99;
