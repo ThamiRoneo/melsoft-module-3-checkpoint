@@ -7,6 +7,32 @@
 </head>
 <body>
 
-<script src="testfile.js"></script>
+<script>
+// declaring variables
+let greeting;
+let name;
+let age;
+let membershipTier;
+let subscription = false;
+let summary;
+
+// assigning variables
+greeting = window.alert("Hello, Welcome to JS user interaction :)");
+name = window.prompt('What is your name?');
+name = name ? name : 'Guest';                   // sets a default name
+
+age = window.prompt('How old are you?');
+age = age != NaN && (age >= 1 && age < 60) ? Number(age) : prompt('How old are you?');  // age validator
+
+subscription = window.confirm('Do you want to subscribe to our newsletter?');
+
+membershipTier = age < 18 ? 'Youth' : age >= 18 && age <= 59 ? 'Adult' : 'Senior';
+
+summary = window.alert(`Name: ${name}\nAge: ${age}\nMembership Tier: ${membershipTier}\nNewsletter subscription status: ${subscription}`)
+console.log(summary);
+
+// Interview answers:
+// #1: 
+</script>
 </body>
 </html>
